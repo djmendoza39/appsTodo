@@ -83,10 +83,7 @@ if(localStorage.getItem('fruta')){
                 console.log(pFrutas);
                 actualizar.remove();
                 location.reload();
-            });
-
-            
-            
+            })
         });
 
         eliminar.addEventListener('click', ()=>{
