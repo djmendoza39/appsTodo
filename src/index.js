@@ -1,3 +1,4 @@
+import './assets/apps.css';
 import { Todo } from "./core/Todo";
 import { Persistencia } from "./core/Persistencia";
 import { Events } from "./core/Events";
@@ -11,7 +12,6 @@ import { App } from "./app/App";
 
   let aTareas = [];
   const btnGuardar = document.querySelector("#btnGuardar");
-  const actualizar = document.createElement("button");
   const inputTexto = document.querySelector("#inputTarea");
   const ul = document.querySelector("ul");
   const form = document.querySelector('form');
@@ -47,7 +47,6 @@ import { App } from "./app/App";
   });
 
   if (app.todo.read("tarea")) {
-    let cont = -1;
     app.todo.read('tarea').forEach((elemento, posicion) => {
       const li = document.createElement("li");
       const btnEditar = document.createElement("button");
@@ -66,8 +65,8 @@ import { App } from "./app/App";
       li.appendChild(contenedorBtn);
       contenedorBtn.append(btnEditar, eliminar);
       aTareas.push(elemento);
-      cont++;
-
+      
+      
       btnEditar.addEventListener('click', ()=>{
         console.log(`elemento a modificar ${elemento.tarea} en la pos: ${posicion}`);
         inputTexto.value = elemento.tarea;
