@@ -67,6 +67,7 @@ import { App } from "./app/App";
       contenedorBtn.append(btnEditar, eliminar);
       aTareas.push(elemento);
       cont++;
+
       btnEditar.addEventListener('click', ()=>{
         console.log(`elemento a modificar ${elemento.tarea} en la pos: ${posicion}`);
         inputTexto.value = elemento.tarea;
@@ -76,16 +77,25 @@ import { App } from "./app/App";
         btnModificar.innerHTML = `<i class="bi bi-arrow-repeat"></i>`;
         form.appendChild(btnModificar);
 
-        btnModificar.addEventListener('click', (e)=>{
-          e.preventDefault();
-          let confirmar = window.confirm('si deseas modificar el contenido presiona aceptar');
-          if(confirmar == true){
-            console.log('modificando el contenido');
-            window.localStorage.setItem('tarea', JSON.stringify({tarea: inputTexto.value}));
-          }
-        })
+        btnModificar.addEventListener('click', ()=>{
+          aTareas.splice(posicion, 1, {tarea: inputTexto.value})
+          app.todo.create('tarea', aTareas);
+          li.textContent= elemento.tarea;
+        });
+
+      });
+
+      eliminar.addEventListener('click', ()=>{
+        let confirmar = window.confirm('presione aceptar si desea eliminar la tarea');
+        if(confirmar == true){
+          aTareas.splice(posicion, 1);
+          app.todo.create('tarea', aTareas);
+          console.log(aTareas);
+          location.reload();
+          
+        }
+
       })
-    }); 
-    
+    });
   }
 })(new App(new Todo(new Persistencia())), new Events());
