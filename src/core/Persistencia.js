@@ -11,4 +11,9 @@ export class Persistencia{
         return JSON.parse(window.localStorage.getItem(key));
     }
 
+    removeItem(key){
+        return window.localStorage.removeItem(key);
+
+    }
+
 }

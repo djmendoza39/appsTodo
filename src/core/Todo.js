@@ -15,11 +15,8 @@ export class Todo{
         return this.db.getItem(key);
     }
 
-    update(){
-
-    }
-
-    delete(){
+    delete(key){
+        return this.db.removeItem(key);
 
     }
 }
