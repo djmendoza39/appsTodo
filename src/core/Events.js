@@ -1,7 +1,5 @@
-export class Events{
-    click(selector, action){
-        document.querySelector(selector).addEventListener('click', action);
-
-    }
-
+export class Events {
+  click(selector, action) {
+    document.querySelector(selector).addEventListener("click", action);
+  }
 }

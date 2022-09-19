@@ -1,5 +1,4 @@
 @import "./apps.css";
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 * {
   box-sizing: border-box;
@@ -21,6 +20,7 @@ li {
   justify-content: space-between;
   color: aliceblue;
 }
+
 body {
   padding: 2rem;
   font-family: "Roboto Condensed", sans-serif;
@@ -48,6 +48,7 @@ body {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+
 h1 {
   text-align: center;
   font-size: 3.8rem;
@@ -85,7 +86,7 @@ input {
   align-items: center;
 }
 
-.btn-estilos-actualizar{
+.btn-estilos-actualizar {
   border: none;
   border-radius: 0.4rem;
   font-size: 1.4rem;

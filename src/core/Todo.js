@@ -1,22 +1,19 @@
+export class Todo {
+  db;
 
-export class Todo{
-    
-    db;
-    
-    constructor(persistencia){
-        this.db = persistencia;
-    }
+  constructor(persistencia) {
+    this.db = persistencia;
+  }
 
-    create(key, value){
-        return this.db.setItem(key, value);
-    }
+  create(key, value) {
+    return this.db.setItem(key, value);
+  }
 
-    read(key){
-        return this.db.getItem(key);
-    }
+  read(key) {
+    return this.db.getItem(key);
+  }
 
-    delete(key){
-        return this.db.removeItem(key);
-
-    }
+  delete(key) {
+    return this.db.removeItem(key);
+  }
 }
